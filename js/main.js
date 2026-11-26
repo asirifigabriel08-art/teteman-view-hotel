@@ -38,6 +38,7 @@
     const header = $("#site-header");
     header.innerHTML = `<div class="nav__in">
       <a class="brand" href="${base}index.html" aria-label="${T.name} home"><img alt="${T.name}" height="46"><span class="brand__txt">${T.name}</span></a>
+      <a class="nav__mobile-book" href="${hasBook ? "#book" : base + "index.html#book"}">Book</a>
       <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
       <nav class="menu" id="menu" aria-label="Main">${NAV.map(([n, h]) => `<a href="${base}${h}"${h === here ? ' aria-current="page"' : ""}>${n}</a>`).join("")}
       <a class="btn btn--primary" href="${hasBook ? "#book" : base + "index.html#book"}">Book your stay</a></nav></div>`;
@@ -72,7 +73,7 @@
 
     const float = document.createElement("div");
     float.innerHTML = `<a class="wa-float" data-wa="Hello ${T.name}, I'd like to make an enquiry." aria-label="Chat on WhatsApp">${ico("whatsapp")}</a>
-      <div class="mbar"><a href="${hasBook ? "#book" : "index.html#book"}">${ico("calendar")} Book</a><a href="tel:+233245467920">${ico("phone")} Call</a><a data-wa="Hello ${T.name}, I'd like to make an enquiry.">${ico("whatsapp")} WhatsApp</a></div>`;
+      <div class="mbar"><a href="${hasBook ? "#book" : base + "index.html#book"}">${ico("calendar")} Book</a><a href="tel:+233245467920">${ico("phone")} Call</a><a data-wa="Hello ${T.name}, I'd like to make an enquiry.">${ico("whatsapp")} WhatsApp</a></div>`;
     document.body.append(...float.children);
   }
 
@@ -172,7 +173,7 @@
       <section class="sec"><div class="wrap room-detail-layout"><div class="room-detail-intro reveal"><p class="kicker">A comfortable space</p><h2>${room.blurb}</h2><p>Request this room directly and the hotel team can confirm availability for your stay.</p></div>
       <aside class="room-detail-facilities reveal"><p class="kicker">Room facilities</p><ul>${room.details.map((detail) => `<li>${detail}</li>`).join("")}</ul></aside></div></section>
       <section class="sec sec--sand"><div class="wrap"><div class="head"><div><p class="kicker">Gallery</p><h2>Look around the room</h2></div></div><div class="room-detail-gallery">${(room.gallery || [room.img]).map((src, index) => `<button class="g-item reveal" data-src="${prefixed(src)}" data-alt="${room.name} photograph ${index + 1}" aria-label="Open ${room.name} photograph ${index + 1}"><div class="media" data-src="${prefixed(src)}" data-alt="${room.name} photograph ${index + 1}"></div></button>`).join("")}</div></div></section>
-      <section class="room-detail-cta sec sec--dark"><div class="wrap"><p class="kicker">Ready to make it your stay?</p><h2>Request ${room.name}</h2><div class="row"><a class="btn btn--primary" href="${base}index.html#book">Book this room</a><a class="btn btn--ghost" data-wa="Hello ${T.name}, I would like to enquire about the ${room.name} for my stay.">Ask about this room</a></div></div></section>`;
+      <section class="room-detail-cta sec sec--dark"><div class="wrap"><p class="kicker">Ready to make it your stay?</p><h2>Request ${room.name}</h2><div class="row"><a class="btn btn--primary" href="${base}index.html?room=${room.id}#book">Book this room</a><a class="btn btn--ghost" data-wa="Hello ${T.name}, I would like to enquire about the ${room.name} for my stay.">Ask about this room</a></div></div></section>`;
     $$("[data-wa]", mount).forEach((link) => { link.href = wa(link.dataset.wa); link.target = "_blank"; link.rel = "noopener"; });
   }
 
@@ -241,6 +242,13 @@
           ? `${nights} night${nights === 1 ? "" : "s"} at GH₵${room.price} = GH₵${nights * room.price}`
           : "Choose a room and valid dates";
       };
+      if (booking && roomEl) {
+        const requestedRoom = new URLSearchParams(location.search).get("room");
+        if (requestedRoom && [...roomEl.options].some((option) => option.value === requestedRoom)) {
+          roomEl.value = requestedRoom;
+          updateTotal();
+        }
+      }
       if (outEl) inEl.addEventListener("change", () => {
         outEl.min = inEl.value || today;
         if (outEl.value && outEl.value <= inEl.value) outEl.value = "";

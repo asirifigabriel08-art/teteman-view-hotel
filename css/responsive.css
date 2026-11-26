@@ -22,6 +22,7 @@
   .hero__scroll{display:none}
   /* Mobile navigation */
   .burger{display:block;z-index:61}
+  .nav__mobile-book{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 .9rem;margin-left:auto;border:1px solid currentColor;text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;font-weight:700}
   .menu{position:fixed;top:4.8rem;right:1.25rem;left:auto;width:min(310px,calc(100% - 2.5rem));height:auto;max-height:calc(100vh - 6rem);overflow:auto;background:rgba(25,24,23,.98);color:var(--ivory);border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 60px rgba(0,0,0,.28);flex-direction:column;justify-content:flex-start;align-items:stretch;gap:0;padding:.8rem;opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top right;transition:opacity .25s,transform .25s var(--ease),visibility .25s;z-index:60}
   .menu a:not(.btn){font:500 1.02rem/1.2 var(--sans);padding:.78rem .8rem;border-bottom:1px solid rgba(255,255,255,.07)}
   .menu a:not(.btn)::after{display:none}

@@ -68,6 +68,8 @@ window.TETEMAN = {
     { cat: "bathrooms", src: "images/rooms/executive-5.jpg", alt: "Hotel bathroom", shape: "wide" },
     { cat: "reception", src: "images/hotel/reception-1.jpg", alt: "Teteman View Hotel reception wall and television", shape: "tall" },
     { cat: "reception", src: "images/hotel/reception-2.jpg", alt: "Teteman View Hotel reception desk", shape: "wide" },
+    { cat: "interior", src: "images/hotel/stairs-1.jpg", alt: "Interior staircase at Teteman View Hotel", shape: "tall" },
+    { cat: "interior", src: "images/hotel/relaxation-1.jpg", alt: "Table and chairs inside Teteman View Hotel", shape: "wide" },
     { cat: "restaurant", src: "images/dining/restaurant-1.jpg", alt: "Teteman View Hotel Chop Bar exterior sign", shape: "wide" },
     { cat: "restaurant", src: "images/dining/restaurant-2.jpg", alt: "Teteman View Hotel restaurant exterior", shape: "wide" },
     { cat: "restaurant", src: "images/dining/restaurant-3.jpg", alt: "Teteman View Hotel restaurant dining area", shape: "wide" },
