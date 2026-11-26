@@ -4,6 +4,7 @@
   .menu{gap:1.2rem}
 }
 @media (max-width:900px){
+  .branch{grid-template-columns:1fr}.branch__image{min-height:420px}
   .room-showcase{grid-template-columns:1fr}
   .room-showcase__tabs{flex-direction:row;overflow:auto;border-top:0}
   .room-showcase__tabs button{flex:1;min-width:150px;min-height:58px;text-align:center;border-bottom:1px solid var(--line)}

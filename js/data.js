@@ -47,6 +47,8 @@ window.TETEMAN = {
 
   // Drop the actual supplied hotel photos into the matching folders and update these paths.
   gallery: [
+    { cat: "oti", src: "images/branches/oti-1.jpg", alt: "Teteman View Hotel branch in Teteman, Oti Region", shape: "wide" },
+    { cat: "oti", src: "images/branches/oti-2.jpg", alt: "Side exterior view of the Teteman View Hotel branch in Teteman, Oti Region", shape: "wide" },
     { cat: "exterior", src: "images/hotel/exterior.jpg", alt: "Teteman View Hotel exterior", shape: "wide" },
     { cat: "exterior", src: "images/hotel/hero.jpg", alt: "Teteman View Hotel entrance exterior", shape: "wide" },
     { cat: "economy", src: "images/rooms/economy-1.jpg", alt: "Economy room bed", shape: "tall" },
