@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hotel Management | Teteman View Hotel</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <main id="admin-app" class="admin-shell">
+    <section class="login-card" id="login-panel">
+      <p class="kicker">Private access</p>
+      <h1>Hotel management</h1>
+      <p id="setup-message">Configure Supabase before using the secure dashboard.</p>
+      <form id="login-form">
+        <label>Email <input id="login-email" type="email" autocomplete="username" required></label>
+        <label>Password <input id="login-password" type="password" autocomplete="current-password" required></label>
+        <button type="submit" id="login-button">Sign in securely</button>
+        <p id="login-status" role="status"></p>
+      </form>
+    </section>
+
+    <aside class="sidebar" id="sidebar" hidden>
+      <h2>Teteman View</h2>
+      <nav>
+        <button class="active" data-view="overview">Overview</button>
+        <button data-view="bookings">Bookings</button>
+        <button data-view="rooms">Rooms</button>
+      </nav>
+      <button id="logout-button">Sign out</button>
+    </aside>
+
+    <section class="dashboard" id="dashboard" hidden>
+      <header><h1 id="dashboard-title">Overview</h1></header>
+      <div id="metrics" class="metrics"></div>
+      <div id="data-view"></div>
+    </section>
+  </main>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

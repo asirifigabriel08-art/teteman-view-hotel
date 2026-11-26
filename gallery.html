@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Photo Gallery | Teteman View Hotel, Accra</title>
+<meta name="description" content="Photos of Teteman View Hotel in Accra: rooms, dining, bathrooms, reception and exterior.">
+<meta property="og:title" content="Gallery | Teteman View Hotel, Accra">
+<meta property="og:description" content="Take a look around Teteman View Hotel.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hotel/hero.jpg">
+<link rel="icon" href="images/logo/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+
+<main id="main">
+  <section class="hero hero--page">
+    <div class="media" data-src="images/hotel/hero.jpg" data-alt="Teteman View Hotel" data-eager></div>
+    <div class="hero__in">
+      <p class="hero__loc">Accra, Ghana</p>
+      <h1>Gallery</h1>
+      <p class="hero__tag">A look around Teteman View.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="chips" role="group" aria-label="Filter photos">
+        <button class="chip" data-cat="all" aria-pressed="true">All</button>
+        <button class="chip" data-cat="exterior" aria-pressed="false">Exterior</button>
+        <button class="chip" data-cat="economy" aria-pressed="false">Economy rooms</button>
+        <button class="chip" data-cat="standard" aria-pressed="false">Standard rooms</button>
+        <button class="chip" data-cat="executive" aria-pressed="false">Executive rooms</button>
+        <button class="chip" data-cat="bathrooms" aria-pressed="false">Bathrooms</button>
+        <button class="chip" data-cat="reception" aria-pressed="false">Reception</button>
+        <button class="chip" data-cat="restaurant" aria-pressed="false">Restaurant</button>
+      </div>
+      <div class="masonry" data-gallery="full"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--dark">
+    <div class="wrap row cta-bar">
+      <h2>Ready to stay with us?</h2>
+      <a class="btn btn--primary" href="index.html#book">Book your stay</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="site-footer"></footer>
+<noscript><p class="noscript-note">Please enable JavaScript to view this site. Call us on 0245467920.</p></noscript>
+<script src="js/data.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
